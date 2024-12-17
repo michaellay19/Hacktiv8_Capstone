@@ -1,0 +1,102 @@
+.navbar {
+    background-color: #222; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; 
+    padding: 0 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+.brand {
+    font-size: 28px; 
+    font-weight: bold;
+    color: #f4f4f4;
+    text-transform: uppercase; 
+    letter-spacing: 1.5px; 
+}
+
+.linksContainer {
+    display: flex;
+    gap: 25px; 
+}
+
+.link {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px; 
+    transition: color 0.3s ease; 
+    padding: 8px 12px;
+    border-radius: 5px; 
+    position: relative; 
+}
+
+.activeLink {
+    color: orange;
+    font-weight: bold;
+    background-color: #333; 
+}
+
+.link:hover {
+    color: orange; 
+    background-color: #333; 
+    transform: translateY(-2px); 
+}
+
+.link::after {
+    content: '';
+    position: absolute;
+    left: 50%; 
+    bottom: -5px; 
+    width: 0; 
+    height: 2px; 
+    background-color: orange; 
+    transition: width 0.3s ease, left 0.3s ease; 
+}
+
+.link:hover::after {
+    width: 100%; 
+    left: 0; 
+}
+
+.searchBarContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+.searchInput {
+    padding: 8px 12px; 
+    border: 1px solid #555;
+    border-radius: 20px; 
+    outline: none;
+    background-color: #333;
+    color: #fff;
+    width: 200px; 
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.searchInput:focus {
+    border-color: orange; 
+    background-color: #444; 
+}
+
+.searchBarBtn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px; 
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.searchBarBtn:hover {
+    background-color: #e67e22; 
+    transform: scale(1.05); 
+}
