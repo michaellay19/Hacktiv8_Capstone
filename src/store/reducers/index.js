@@ -4,6 +4,7 @@ export const NEWS_REDUCER_CASES = {
     DONE_FETCHING_NEWS: "DONE_FETCHING_NEWS",
     SAVE_NEWS: "SAVE_NEWS",
     UNSAVE_NEWS: "UNSAVE_NEWS",
+    CLEAR_NEWS: "CLEAR_NEWS",
 };
 
 const newsState = {
@@ -47,6 +48,17 @@ const newsReducer = (state = newsState, action) => {
                 savedNews: state.savedNews.filter(
                     (saved) => saved._id !== action.news._id
                 ),
+            };
+        case NEWS_REDUCER_CASES.CLEAR_NEWS:
+            return {
+                ...state,
+                news: [],
+                loading: true,
+            };
+        case NEWS_REDUCER_CASES.DONE_FETCHING_NEWS:
+            return {
+                ...state,
+                loading: false, 
             };
         default:
             return state;

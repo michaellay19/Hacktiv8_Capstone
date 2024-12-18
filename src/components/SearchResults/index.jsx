@@ -14,6 +14,7 @@ function SearchResults() {
 
     useEffect(() => {
         if (query) {
+            dispatch({ type: NEWS_REDUCER_CASES.CLEAR_NEWS });
             dispatch(
                 fetchMovies({
                     q: query,
